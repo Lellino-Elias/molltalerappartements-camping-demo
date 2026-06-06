@@ -206,6 +206,7 @@ export const molltalerappartements: CampsiteConfig = {
   },
 
   kontakt: {
+    coords: { lat: 46.887883, lng: 13.043365 },
     tel: "+43 664 380 4493",
     telHref: "tel:+436643804493",
     mail: "info@molltalerappartements.at",
