@@ -1,259 +1,135 @@
 import type { CampsiteConfig } from "../types";
 
-/**
- * Mölltaler Appartements — Pusstratten 13, 9832 Stall im Mölltal, Kärnten.
- * Alle Texte/Fakten belegt aus molltalerappartements.at (Stand-Scrape 2026-06,
- * dt./engl./nl. Sprachversionen). Bilder = ausschließlich eigene Fotos des
- * Hauses in /public/campsites/molltalerappartements/ (jedes per Vision geprüft).
- * EHRLICH:
- *  - KEIN See am Platz → `see` ausgelassen. Es gibt einen Gemeinschaftsgarten
- *    mit Teich und den Fluss Möll mit kleinem Wasserfall in der Nähe — nie als
- *    "am See" geframt.
- *  - Angebot = Appartements/Ferienwohnungen + Zimmer mit Frühstück + Wohnmobil-
- *    stellplatz. brandKind ehrlich "Appartements & Stellplatz".
- *  - Keine Auszeichnung eindeutig belegt → awards bleibt leer.
- *  - Preise real von der Preisseite übernommen (siehe REPORT.md).
- *  - Keine Koordinaten in den Quelldaten → coords ausgelassen (Karte aus,
- *    Adresse wird gezeigt).
- */
 const IMG = "/campsites/molltalerappartements";
 
-export const molltalerappartements: CampsiteConfig = {
+const molltalerappartements: CampsiteConfig = {
   name: "Mölltaler Appartements",
-  shortName: "Mölltaler Appartements",
+  shortName: "Mölltaler",
   slug: "molltalerappartements",
   ort: "Stall im Mölltal",
   region: "Kärnten",
-  brandKind: "Appartements & Stellplatz",
-  // Kein See am Platz → bewusst ausgelassen.
-  regionLong: "Mölltal · Nationalpark Hohe Tauern · Kärnten · Österreich",
+  brandKind: "Stellplatz & Appartements",
+  regionLong: "Nationalpark Hohe Tauern · Mölltal · Kärnten",
 
-  claim: "Urlaub im Mölltal — im Herzen des Nationalparks Hohe Tauern",
-  claimEmphasis: "im Herzen des Nationalparks Hohe Tauern",
+  heroVariant: "center",
+
+  claim: "Dein Stellplatz im Herzen der Hohen Tauern",
+  claimEmphasis: "Hohen Tauern",
+  emailDetail: "eure Lage zwischen Raggaschlucht und Mölltaler Gletscher",
   intro:
-    "Charmante Appartements & Ferienwohnungen, Zimmer mit Frühstück und ein gut ausgestatteter Wohnmobilstellplatz — ruhig im Mölltal in Kärnten gelegen, umgeben von den Bergen des Nationalparks Hohe Tauern.",
+    "Mitten im Nationalpark Hohe Tauern findest du bei uns einen ruhigen Wohnmobilstellplatz, dazu Appartements und Zimmer mit Frühstück — umgeben von Bergen, nah an Raggaschlucht, Gletscher und Grossglockner.",
 
-  logo: { src: `${IMG}/logo.png`, alt: "Mölltaler Appartements Logo" },
+  logo: { src: `${IMG}/logo.png`, alt: "Logo der Mölltaler Appartements mit grüner Berg- und Hüttenillustration" },
 
   statement: {
-    text: "Bei uns findest du den perfekten Zwischenstopp — komfortabel übernachten, ankommen und die Natur des Mölltals in vollen Zügen genießen.",
-    emphasis: "den perfekten Zwischenstopp",
+    text: "Stell den Camper dort ab, wo das Mölltal am stillsten ist — Berge ringsum, der Gletscher zum Greifen nah.",
+    emphasis: "am stillsten",
   },
 
   pillars: [
-    {
-      title: "Garten mit Teich & Bergblick",
-      text: "Ein liebevoll angelegter Gemeinschaftsgarten mit Teich lädt zum Entspannen nach einem aktiven Tag ein — mit Blick auf die umliegenden Berge.",
-      image: { src: `${IMG}/garten-teich.webp`, alt: "Gemeinschaftsgarten mit Teich, rotem Zaun und Bergen im Hintergrund" },
-    },
-    {
-      title: "Drei Arten zu übernachten",
-      text: "Appartement & Ferienwohnung, Zimmer mit Frühstück oder Stellplatz fürs Wohnmobil — du wählst, wie du wohnen möchtest.",
-      image: { src: `${IMG}/haus.webp`, alt: "Das Haupthaus der Mölltaler Appartements mit Balkonen, davor der Garten" },
-    },
-    {
-      title: "Frühstück & Aufenthaltsraum",
-      text: "Frischer, regionaler Start in den Tag im gemütlichen Frühstücksraum — tagsüber lädt der Aufenthaltsraum mit Gesellschaftsspielen zum Verweilen ein.",
-      image: { src: `${IMG}/fruehstuecksraum.webp`, alt: "Gemütlicher Frühstücks- und Aufenthaltsraum mit Sitznischen und Holzbalken" },
-    },
+    { title: "Garten mit Teich", text: "Ein gepflegter Gemeinschaftsgarten mit Teich lädt nach dem Wandertag zum Durchatmen ein.", image: { src: `${IMG}/garten-teich.webp`, alt: "Gemeinschaftsgarten mit Teich und Bergblick" } },
+    { title: "Frühstück im Mölltal", text: "Frische, regionale Produkte am Morgen — im hellen Frühstücks- und Aufenthaltsraum.", image: { src: `${IMG}/fruehstuecksraum.webp`, alt: "Heller Frühstücks- und Aufenthaltsraum mit Buffet" } },
+    { title: "Sonnenterrasse mit Bergblick", text: "Die Terrasse mit Blick ins Mölltal lädt nach der Wanderung zum Verweilen ein — bei Kaffee morgens und Bergpanorama am Abend.", image: { src: `${IMG}/sonnenterrasse.webp`, alt: "Sonnenterrasse mit Sitzgarnitur, Sonnenschirmen und weitem Blick ins grüne Mölltal" } },
   ],
 
-  usps: [
-    "Mitten im Nationalpark Hohe Tauern",
-    "Appartements, Zimmer & Stellplatz",
-    "Frühstück mit regionalen Produkten",
-    "Hunde willkommen",
-    "Gemeinschaftsgarten mit Teich",
-    "Hottub & Skiraum im Winter",
-  ],
+  usps: ["Strom an jedem Platz", "Sauberes Sanitär", "Hunde willkommen", "Frühstück auf Wunsch", "Hot Tub im Winter", "Nah an Raggaschlucht"],
 
   trust: {
-    heading: "Worauf du dich bei den Mölltaler Appartements verlassen kannst",
-    headingEmphasis: "verlassen",
+    heading: "Warum Camper hier Halt machen",
+    headingEmphasis: "Halt machen",
     intro:
-      "Herzlich und mehrsprachig betreut, zentral im Mölltal gelegen — mit Frühstücksraum, Gemeinschaftsgarten mit Teich und einem ruhigen Wohnmobilstellplatz für entspannte Tage in den Bergen Kärntens.",
+      "Ruhig im Tal, mit sauberem Sanitär, Strom an jedem Platz und Bergen ringsum — bei uns wird der Zwischenstopp auf dem Weg zum Grossglockner schnell zum eigentlichen Ziel.",
   },
 
-  // Keine eindeutig belegte Auszeichnung auf der Quelle → ehrlich leer.
   awards: [],
 
-  // Quelle nennt keine festen Saisondaten; Winter- (Hottub, Skiraum, Rodeln) und
-  // Sommerangebote (Wandern, Rafting) + "Mo–So 24 Stunden geöffnet" → ganzjährig.
-  saison: { von: "Januar", bis: "Dezember" },
-
   hero: {
-    aerial: {
-      src: `${IMG}/hero-stellplatz-berge.webp`,
-      alt: "Mölltaler Appartements im Mölltal: Wiese mit Stellplätzen vor dem Haus, umgeben von bewaldeten Bergen",
-    },
+    aerial: { src: `${IMG}/hero-stellplatz.webp`, alt: "Wohnmobilstellplatz auf grüner Wiese im Mölltal, umgeben von Bergen" },
   },
 
   camping: {
     heading: "Wohnmobilstellplatz im Mölltal",
     intro:
-      "Ein ruhiger, gut ausgestatteter Stellplatz mitten im Mölltal — nahe der Raggaschlucht, nur wenige Minuten zur Talstation der Mölltaler Gletscherbahn und ideal als Tappe an der Grossglockner Hochalpenstraße. Geeignet für kleine wie große Wohnmobile.",
+      "Ein ruhiger Platz für kleine und große Camper — mit Strom, Frisch- und Abwasser, sauberem Sanitär und allem, was den Halt auf dem Weg durch die Hohen Tauern entspannt macht.",
     features: [
-      {
-        title: "Ruhig auf der Wiese",
-        text: "Stellplätze auf grüner Wiese, umgeben von Bäumen und Bergen — ruhige Lage im Tal, gut erreichbar.",
-        image: { src: `${IMG}/stellplatz-wiese.webp`, alt: "Wiese mit Stellplätzen, Bergen und Tal im Mölltal" },
-      },
-      {
-        title: "Dusche & Sanitär",
-        text: "Saubere, gepflegte Sanitäranlagen mit warmer Dusche — für unbeschwertes Campen.",
-        image: { src: `${IMG}/sanitaer-dusche.webp`, alt: "Saubere Duschkabine in der Sanitäranlage des Stellplatzes" },
-      },
-      {
-        title: "WC & Waschraum",
-        text: "WC und Waschbecken direkt am Platz, ordentlich und sauber gehalten.",
-        image: { src: `${IMG}/sanitaer-wc.webp`, alt: "Sauberes WC mit Holzverkleidung am Wohnmobilstellplatz" },
-      },
-      {
-        title: "Strom, Wasser & Entsorgung",
-        text: "Stromanschluss, Frischwasser sowie Entsorgung von Grauwasser und WC — alles vor Ort.",
-        image: { src: `${IMG}/versorgung-spuele.webp`, alt: "Outdoor-Spülplatz mit Spüle und Warmwasser am Stellplatz" },
-      },
-      {
-        title: "Sonnenterrasse & Hottub",
-        text: "Eine Terrasse mit Bergblick zum Verweilen — im Winterhalbjahr steht zusätzlich ein Hottub bereit (Voranmeldung). Hunde sind willkommen.",
-        image: { src: `${IMG}/terrasse-hottub.webp`, alt: "Terrasse mit Sitzplätzen, Hottub und Bergen im Hintergrund" },
-      },
+      { title: "Platz für klein & groß", text: "Ob kompakter Van oder großes Wohnmobil — der ebene Wiesenplatz hat überall einen Stromanschluss.", image: { src: `${IMG}/stellplatz-wiese.webp`, alt: "Ebener Wiesenplatz für Camper mit Bergen im Hintergrund" } },
+      { title: "Frisch- & Abwasser", text: "Frischwasser tanken und Grauwasser entsorgen — die Versorgungsstation liegt direkt am Platz.", image: { src: `${IMG}/service-wasser.webp`, alt: "Versorgungsstation mit Wasseranschluss am Stellplatz" } },
+      { title: "Saubere Sanitäranlagen", text: "Gepflegte Duschen, WC und Waschbecken in warmem Holz — sauber und gleich um die Ecke.", image: { src: `${IMG}/sanitaer-dusche.webp`, alt: "Saubere Dusche im holzverkleideten Sanitärraum" } },
+      { title: "Gemütlicher Aufenthaltsraum", text: "Drinnen warten Sitzecken, ein Fernseher und Gesellschaftsspiele — der ideale Platz für einen geselligen Abend.", image: { src: `${IMG}/aufenthaltsraum.webp`, alt: "Gemütlicher Aufenthaltsraum mit Sitzecken" } },
+      { title: "Brötchen & Kaffee", text: "Auf Wunsch starten wir deinen Tag mit frischen Brötchen und Kaffee aus dem Frühstücksraum.", image: { src: `${IMG}/fruehstueck-kaffee.webp`, alt: "Kaffee- und Frühstücksstation im Aufenthaltsraum" } },
+      { title: "Natur vor der Tür", text: "Wanderwege beginnen in unmittelbarer Nähe, und die Raggaschlucht ist schnell mit dem Rad erreicht.", image: { src: `${IMG}/raggaschlucht.webp`, alt: "Fluss mit kleinem Wasserfall nahe dem Mölltaler Stellplatz" } },
     ],
   },
 
   mobilheime: {
     heading: "Appartements & Zimmer mit Frühstück",
     intro:
-      "Lieber feste Wände? Charmant eingerichtete Ferienwohnungen mit eigener Küche und gemütliche Zimmer mit Frühstück — viele mit Balkon oder Terrasse zum Garten.",
+      "Neben dem Stellplatz findest du komfortable Ferienwohnungen und Zimmer mit Frühstück — ideal, wenn du das Mölltal lieber mit festem Dach über dem Kopf erkundest.",
     items: [
-      {
-        name: "Appartement Wasserfall",
-        kind: "Ferienwohnung · eigene Küche",
-        text: "Charmante Erdgeschoss-Ferienwohnung mit eigener, gut ausgestatteter Küche, separatem Schlafzimmer und privater Terrasse zum Gemeinschaftsgarten — ideal für zwei Personen, Hund willkommen.",
-        image: { src: `${IMG}/appartement-kueche.webp`, alt: "Voll ausgestattete Küche mit Essbereich im Appartement Wasserfall" },
-        priceFrom: 85,
-        features: ["bis 2 Personen", "eigene Küche & Bad", "Terrasse am Garten", "Hund willkommen"],
-      },
-      {
-        name: "Doppelzimmer mit Frühstück",
-        kind: "Zimmer · mit Frühstück",
-        text: "Gemütliches Zimmer für zwei mit eigenem Bad und reichhaltigem Frühstück im Frühstücksraum — der entspannte Start in den Urlaubstag.",
-        image: { src: `${IMG}/doppelzimmer.webp`, alt: "Doppelzimmer mit zwei Betten und eigenem Bad" },
-        priceFrom: 110,
-        features: ["2 Personen", "Frühstück inklusive", "eigenes Bad"],
-      },
-      {
-        name: "Zimmer mit Frühstück & Balkon",
-        kind: "Einzel- & Doppelzimmer",
-        text: "Helle Zimmer mit Frühstück, eigenem Bad, TV sowie Kaffee- und Teezubereitung im Zimmer — teils mit Balkon und Blick ins Grüne. Einzelzimmer ab 65 €.",
-        image: { src: `${IMG}/zimmer-balkon.webp`, alt: "Zimmer mit Betten, TV, Kaffeestation und Balkon mit Blick ins Grüne" },
-        priceFrom: 65,
-        features: ["Frühstück inklusive", "TV, Kaffee & Tee", "teils mit Balkon"],
-      },
+      { name: "Appartement", kind: "Ferienwohnung", text: "Komfortable Ferienwohnung mit eigener Küche und Essbereich — Platz für Familien und Freunde.", image: { src: `${IMG}/appartement-kueche.webp`, alt: "Küche und Essbereich eines Appartements" }, priceFrom: 85, features: ["Eigene Küche", "Wohnbereich", "Für Familien"] },
+      { name: "Doppelzimmer mit Frühstück", kind: "Zimmer mit Frühstück", text: "Gemütliches Doppelzimmer inklusive Frühstück — ruhig gelegen, mit Zugang zum Aufenthaltsraum.", image: { src: `${IMG}/zimmer-doppel.webp`, alt: "Doppelzimmer mit zwei Einzelbetten" }, priceFrom: 110, features: ["Inkl. Frühstück", "Beheizter Skiraum", "Hunde willkommen"] },
     ],
   },
 
   anreise: {
-    heading: "So findest du uns",
+    heading: "Dein Weg ins Mölltal",
     modes: [
-      {
-        title: "Mit dem Auto",
-        text: "Pusstratten 13 in 9832 Stall, mitten im Mölltal — ideale Tappe an der Grossglockner Hochalpenstraße, nahe der Raggaschlucht.",
-      },
-      {
-        title: "Ausflüge & Lage",
-        text: "Nur wenige Autominuten zur Talstation der Mölltaler Gletscherbahn; rundum Wander- und Radwege, Rafting und Canyoning im Tal.",
-      },
-      {
-        title: "Für Motorradfahrer",
-        text: "Überdachter Carport für die Maschine — sicher und trocken. Traumstraßen wie Grossglockner, Nockalmstraße und Stilfser Joch liegen vor der Tür.",
-      },
+      { title: "Mit dem Auto", text: "Über die A10 (Tauernautobahn) bis Spittal/Möllbrücke, dann durchs Mölltal Richtung Stall — der Platz liegt in Pußtratten." },
+      { title: "Zum Gletscher", text: "Zur Talstation der Mölltaler Gletscherbahn sind es rund 10 Minuten mit dem Auto." },
+      { title: "Mit der Bahn", text: "Nächster Bahnhof an der Tauernbahn ist Obervellach — die letzte Etappe ins Tal nimmst du am besten mit dem Auto." },
     ],
   },
 
   galerie: {
-    heading: "Ein Platz zum Wohlfühlen",
-    headingEmphasis: "Wohlfühlen",
-    intro:
-      "Berge, Fluss, Garten und gemütliche Räume — ein paar Eindrücke von den Mölltaler Appartements in Stall.",
-    tag: "Mölltal · Hohe Tauern",
+    heading: "Ein Blick ins Mölltal",
+    headingEmphasis: "Mölltal",
+    intro: "Stellplatz, Garten und Gasträume — ein paar Eindrücke von deinem Halt in den Hohen Tauern.",
+    tag: "Mölltal · Kärnten",
     images: [
-      { src: `${IMG}/moell-wasserfall.webp`, alt: "Der Fluss Möll mit kleinem Wasserfall in der Nähe des Hauses" },
-      { src: `${IMG}/terrasse-talblick.webp`, alt: "Sonnenterrasse mit Sonnenschirmen und Blick ins grüne Tal" },
-      { src: `${IMG}/fruehstueck-buffet.webp`, alt: "Frühstücksraum mit Buffet und gedeckten Tischen" },
-      { src: `${IMG}/appartement-schlafzimmer.webp`, alt: "Gemütliches Schlafzimmer im Appartement" },
+      { src: `${IMG}/terrasse.webp`, alt: "Sonnenterrasse mit Sitzgelegenheiten und Bergblick" },
+      { src: `${IMG}/appartement-wohnen.webp`, alt: "Heller Wohn- und Essbereich im Appartement" },
+      { src: `${IMG}/zimmer-balkon.webp`, alt: "Zimmer mit Balkon und Blick auf die Berge" },
+      { src: `${IMG}/sanitaer-wc.webp`, alt: "Holzverkleideter Sanitärraum am Stellplatz" },
     ],
   },
 
   booking: {
-    heading: "Verfügbarkeit & Anfrage",
-    intro:
-      "Wähle Zeitraum, Unterkunft und Personen — wir melden uns mit deiner persönlichen Verfügbarkeit.",
+    heading: "Sichere dir deinen Platz im Mölltal",
+    headingEmphasis: "im Mölltal",
+    intro: "Wähle Zeitraum und Unterkunft — wir melden uns persönlich mit deiner Verfügbarkeit. Stellplatz, Appartement oder Zimmer mit Frühstück, ganz wie du magst.",
     pricesArePlaceholder: false,
-    priceNote:
-      "ab-Preise · Stellplatz inkl. Kurtaxe (2 Pers.), je weitere Person 5 €/Nacht · Zimmer inkl. Frühstück · zzgl. evtl. Endreinigung & Kurtaxe",
-    highlight: {
-      title: "Kärnten Card inklusive",
-      text: "Mit der Kärnten Card freier Eintritt zu vielen Ausflugszielen der Region. Frühstücksraum, Aufenthaltsraum und Gemeinschaftsgarten stehen allen Gästen offen.",
-    },
+    priceNote: "Stellplatz ab € 25/Nacht für 2 Personen inkl. Strom & Ver-/Entsorgung, jede weitere Person € 5 — zzgl. Kurtaxe. Zimmer & Appartements inkl. Frühstück, zzgl. Endreinigung.",
+    highlight: { title: "Strom & Sanitär inklusive", text: "Strom, Wasser und Entsorgung gehören beim Stellplatz immer dazu." },
     categories: [
-      // Reale Preise von molltalerappartements.at/prijzen + Stellplatz-Seite (siehe REPORT.md).
       { id: "stellplatz", label: "Wohnmobilstellplatz", perNight: 25, perExtraGuest: 5 },
-      { id: "appartement", label: "Appartement", perNight: 85, perExtraGuest: 0 },
-      { id: "einzelzimmer", label: "Einzelzimmer + Frühstück", perNight: 65, perExtraGuest: 0 },
-      { id: "doppelzimmer", label: "Doppelzimmer + Frühstück", perNight: 110, perExtraGuest: 0 },
+      { id: "appartement", label: "Appartement", perNight: 85 },
+      { id: "einzelzimmer", label: "Einzelzimmer mit Frühstück", perNight: 65 },
+      { id: "doppelzimmer", label: "Doppelzimmer mit Frühstück", perNight: 110 },
     ],
   },
 
   kontakt: {
-    coords: { lat: 46.887883, lng: 13.043365 },
-    tel: "+43 664 380 4493",
+    coords: { lat: 46.889987, lng: 13.044046 },
+    tel: "+43 664 384 0493",
     telHref: "tel:+436643804493",
     mail: "info@molltalerappartements.at",
     facebook: "https://facebook.com/molltalerappartements",
-    adresse: "Pusstratten 13 · 9832 Stall im Mölltal · Kärnten",
-    // Keine Koordinaten in den Quelldaten → bewusst ausgelassen (Karte aus).
+    adresse: "Pußtratten 13 · 9832 Stall im Mölltal · Kärnten",
   },
 
-  languages: ["DE", "EN", "NL"],
+  languages: ["DE", "EN", "NL", "IT"],
 
   nav: [
-    {
-      label: "Unterkünfte",
-      href: "#mobilheime",
-      children: [
-        { label: "Appartements", href: "#mobilheime" },
-        { label: "Zimmer mit Frühstück", href: "#mobilheime" },
-        { label: "Frühstücksraum", href: "#mobilheime" },
-      ],
-    },
-    {
-      label: "Stellplatz",
-      href: "#camping",
-      children: [
-        { label: "Wohnmobilstellplatz", href: "#camping" },
-        { label: "Sanitär & Versorgung", href: "#camping" },
-        { label: "Terrasse & Hottub", href: "#camping" },
-      ],
-    },
-    {
-      label: "Lage & Aktiv",
-      href: "#anreise",
-      children: [
-        { label: "Mölltaler Gletscher", href: "#anreise" },
-        { label: "Raggaschlucht", href: "#anreise" },
-        { label: "Für Motorradfahrer", href: "#anreise" },
-      ],
-    },
-    {
-      label: "Preise & Kontakt",
-      href: "#booking",
-      children: [
-        { label: "Preise", href: "#booking" },
-        { label: "Anreise", href: "#anreise" },
-        { label: "Kontakt", href: "#anreise" },
-      ],
-    },
+    { label: "Stellplatz", href: "#camping", children: [
+      { label: "Stellplatz", href: "#camping" },
+      { label: "Sanitär", href: "#camping" },
+    ]},
+    { label: "Appartements", href: "#mobilheime" },
+    { label: "Galerie", href: "#galerie" },
+    { label: "Preise & Anreise", href: "#booking", children: [
+      { label: "Preise", href: "#booking" },
+      { label: "Anreise", href: "#anreise" },
+    ]},
   ],
 };
 
